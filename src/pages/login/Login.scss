@@ -18,7 +18,6 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  // align-items: center;
   justify-content: center;
   padding: 0 80px;
   font-family: "Poppins";
@@ -121,7 +120,7 @@ input:focus {
   }
   .login-right {
     flex: 6;
-    height: 130vh;
+    height: 110vh;
   }
 }
 @media (max-width: 1200px) {
@@ -129,11 +128,7 @@ input:focus {
     height: 140vh;
   }
 }
-@media (max-width: 926px) {
-  .login-right {
-    height: 150vh;
-  }
-}
+
 
 @media (max-width: 1024px) {
   .show {
@@ -177,11 +172,6 @@ input:focus {
   }
 }
 @media (max-width: 540px) {
-  // .login-form {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  // }
   .text-input {
     width: 350px;
   }
@@ -204,7 +194,6 @@ input:focus {
   }
   .fpassword {
     text-align: center;
-    // font-size: 12px;
   }
 }
 @media (max-width: 300px) {
