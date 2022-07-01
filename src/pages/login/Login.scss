@@ -1,3 +1,5 @@
+@import "../../Variables/Variables.scss";
+
 .login-wrapper {
   display: flex;
   flex-direction: row;
@@ -13,14 +15,14 @@
 .login-right {
   flex: 1;
   width: 100%;
-  background: #ffffff;
-  box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
+  background: $whiteColor;
+  box-shadow: 0px 15px 90px $boxShadowColor;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 80px;
-  font-family: "Poppins";
+  font-family: $fontFamily;
 }
 .left-content {
   padding-bottom: 8rem;
@@ -31,7 +33,7 @@
 }
 .logo-text {
   margin-left: 0.6rem;
-  color: #213f7d;
+  color: $logoTextColor;
 
   font-size: 2.2rem;
 }
@@ -52,21 +54,10 @@
   margin-top: 0.5rem;
 }
 .login-form {
-  font-family: "Poppins";
+  font-family: $fontFamily;
 }
 .text-input {
-  width: 447px;
-  height: 50px;
-  background: #ffffff;
-  border: 2px solid rgba(84, 95, 125, 0.15);
-  border-radius: 5px;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  font-family: "Poppins";
-  font-weight: 400;
-  font-size: 15px;
-  color: #545f7d;
-  opacity: 0.6;
+  @include inputTextStyle(447px, 50px, 5px, $inputTextColor, 15px)
 }
 input:focus {
   outline: none;
@@ -78,13 +69,12 @@ input:focus {
   position: absolute;
   top: 15px;
   right: 90px;
-  font-style: normal;
   font-weight: 650;
   font-size: 13px;
   text-align: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #39cdcc;
+  color: $loginColor;
   cursor: pointer;
 }
 .fpassword {
@@ -93,26 +83,14 @@ input:focus {
   line-height: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #39cdcc;
+  color: $loginColor;
   margin: 1rem 0rem;
 }
 .login-btn {
-  width: 447px;
-  height: 50px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 19px;
-  text-align: center;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: #39cdcc;
-  border-radius: 8px;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
+  @include buttonStyle(447px, $whiteColor, 14px)
 }
 
-// media queries
+// MEDIA QUERIES
 
 @media (min-width: 1200px) {
   .login-left {

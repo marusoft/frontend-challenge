@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Brand from "../../assets/brand/Union.png";
 import Pablo from "../../assets/images/pablo-sign-in 1.png";
 import "./Login.scss";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePassword = () => {
+    setShowPassword(showPassword ? false : true);
+  };
+
   return (
     <div className="login-wrapper">
       <div className="login-left">
@@ -23,15 +29,23 @@ const Login = () => {
         <div className="login-form">
           <form>
             <div className="email">
-              <input type="text" className="text-input" placeholder="Email" />
+              <input
+                type="email"
+                className="text-input"
+                placeholder="Email"
+                required
+              />
             </div>
             <div className="password">
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 className="text-input"
                 placeholder="Password"
+                required
               />
-              <span className="show">show</span>
+              <span className="show" onClick={togglePassword}>
+                {showPassword ? "hide" : "show"}
+              </span>
             </div>
             <div className="fpassword">
               <p>Forgot PASSWORD?</p>
