@@ -1,15 +1,20 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
-import Navbar from "./components/navbar/Navbar";
-import Login from "./pages/login/Login";
+
+import Login from "./pages/login/Login.jsx";
+import Dashboard from "./pages/dashboard/Dashboard.jsx";
 
 const App = () => {
   return (
     <>
-      <div className="App">
-        {/* <Navbar /> */}
-        <Login />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

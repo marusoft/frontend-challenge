@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Brand from "../../assets/brand/Union.png";
 import Pablo from "../../assets/images/pablo-sign-in 1.png";
 import "./Login.scss";
@@ -50,9 +51,11 @@ const Login = () => {
             <div className="fpassword">
               <p>Forgot PASSWORD?</p>
             </div>
-            <button type="submit" className="login-btn">
-              Log in
-            </button>
+            <Link to="/dashboard">
+              <button type="submit" className="login-btn">
+                Log in
+              </button>
+            </Link>
           </form>
         </div>
       </div>
