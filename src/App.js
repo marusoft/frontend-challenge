@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 
-import Login from "./pages/login/Login.jsx";
-import Dashboard from "./pages/dashboard/Dashboard.jsx";
+import Login from "./pages/login/Login";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 const App = () => {
   return (
