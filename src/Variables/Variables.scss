@@ -6,6 +6,9 @@ $borderColor: rgba(84, 95, 125, 0.15);
 $logoTextColor: #213f7d;
 $fontFamily: "Poppins";
 
+@mixin logoStyle($paddingBottom) {
+  padding-bottom: $paddingBottom;
+}
 @mixin inputTextStyle( $width, $height, $borderRadius, $color, $fontSize){
   width: 447px;
   height: 50px;

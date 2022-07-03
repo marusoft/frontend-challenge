@@ -1,0 +1,15 @@
+@import "../../Variables/Variables.scss";
+
+.logo-container {
+  // padding-bottom: 8rem;
+  @include logoStyle(8rem);
+}
+.logo {
+  width: 24.75px;
+  height: 25px;
+}
+.logo-text {
+  margin-left: 0.6rem;
+  color: $logoTextColor;
+  font-size: 2.2rem;
+}

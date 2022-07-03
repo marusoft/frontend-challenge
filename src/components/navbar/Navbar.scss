@@ -1,13 +1,91 @@
-.login {
-  margin-top: 4rem;
-  height: 50px;
-  padding: 0 70px;
+@import "../../Variables/Variables.scss";
+
+.navbar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: 100px;
+  background: #ffffff;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
 }
 
-
-.logoText{
-  color: #213F7D;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-left: .7rem;
+.brand-container {
+  // @include logoStyle(0rem);
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+.logo {
+  width: 24.75px;
+  height: 25px;
+}
+.logo-text {
+  margin-left: 0.6rem;
+  color: $logoTextColor;
+  font-size: 2.2rem;
+}
+.search-input {
+  width: 400px;
+  height: 40px;
+  border-radius: 8px;
+  background: #ffffff;
+  opacity: 0.2;
+  border: 1px solid #213f7d;
+  padding: 0.7rem;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #545f7d;
+  opacity: 0.7;
+}
+button {
+  width: 50px;
+  height: 40px;
+  background: #39cdcc;
+  color: #ffffff;
+  border: none;
+}
+.search-icon {
+  font-size: 15px;
+}
+.profiles {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.doc {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 19px;
+  text-decoration-line: underline;
+  color: #213f7d;
+  cursor: pointer;
+}
+.notification {
+  font-size: 25px;
+  color: #213f7d;
+  cursor: pointer;
+}
+.user-details {
+  display: flex;
+  align-items: center;
+}
+.user-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: contain;
+  margin-right: .6rem;
+}
+.username {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #213f7d;
+}
+.user-info{
+  margin-left: .4rem;
 }

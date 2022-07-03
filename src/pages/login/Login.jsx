@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Brand from "../../assets/brand/Union.png";
 import Pablo from "../../assets/images/pablo-sign-in 1.png";
+import Logo from "../../components/logo/Logo";
 import "./Login.scss";
 
 const Login = () => {
@@ -14,10 +14,7 @@ const Login = () => {
   return (
     <div className="login-wrapper">
       <div className="login-left">
-        <div className="left-content">
-          <img src={Brand} alt="lendsqr-logo" className="logo" />
-          <span className="logo-text">lendsqr</span>
-        </div>
+        <Logo />
         <div className="image">
           <img src={Pablo} alt="pablo-sign-in" className="img-desc" />
         </div>
