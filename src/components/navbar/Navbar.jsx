@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Brand from "../../assets/brand/Union.png";
 import User from "../../assets/images/user.png";
 import { BsSearch } from "react-icons/bs";
@@ -7,14 +7,18 @@ import { BiCaretDown } from "react-icons/bi";
 import "./Navbar.scss";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false)
   return (
     <div className="navbar-wrapper">
+       <div className="small-brand">
+          <img src={Brand} alt="brand" />
+        </div>
       <div className="brand-container">
-        <div>
+        <div className="big-brand">
           <img src={Brand} alt="lendsqr-brand" className="logo" />
           <span className="logo-text">lendsqr</span>
         </div>
-        <div className="search-bar">
+        <div className="search-bar" style={{display: open? "flex": "none"}}>
           <input
             type="text"
             placeholder="Search for anything"
@@ -26,6 +30,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="profiles">
+      <BsSearch className="search-button" onClick={() => setOpen(true)} />
         <p className="doc">Doc</p>
         <div className="notification">
           <IoIosNotificationsOutline />
