@@ -44,21 +44,21 @@
   font-family: $fontFamily;
 }
 .text-input {
-  @include inputTextStyle(447px, 50px, 5px, $inputTextColor, 15px)
+  @include inputTextStyle(447px, 50px, 5px, $inputTextColor, 15px);
 }
 input:focus {
   outline: none;
 }
 .password {
+  display: inline;
   position: relative;
 }
 .show {
   position: absolute;
-  top: 15px;
-  right: 90px;
+  margin: 13px;
+  right: 0px;
   font-weight: 650;
-  font-size: 13px;
-  text-align: center;
+  font-size: 14px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: $loginColor;
