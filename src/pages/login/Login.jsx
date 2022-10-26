@@ -1,8 +1,25 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Pablo from "../../assets/images/pablo-sign-in 1.png";
-import Logo from "../../components/logo/Logo";
-import "./Login.scss";
+import Logo from "../../components/Logo/Logo";
+import Button from "../../components/Button/Button";
+import Input from "../../components/Input/Input";
+import {
+  LoginWrapper,
+  LoginLeft,
+  LoginImage,
+  LoginRight,
+  WelcomeContainer,
+  WelcomeText,
+  WelcomeDesc,
+  FormContainer,
+  EmailWrapper,
+  PasswordWrapper,
+  ForgotPassword,
+  TogglePassword,
+  // Input,
+  // Button
+} from "./Login.styled";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,51 +29,60 @@ const Login = () => {
   };
 
   return (
-    <div className="login-wrapper">
-      <div className="login-left">
+    <LoginWrapper>
+      <LoginLeft>
         <Logo />
-        <div className="image">
-          <img src={Pablo} alt="pablo-sign-in" className="img-desc" />
-        </div>
-      </div>
-      <div className="login-right">
-        <div className="welcome-container">
-          <h2 className="welcome-text">Welcome!</h2>
-          <p className="welcome-desc">Enter details to login.</p>
-        </div>
-        <div className="login-form">
+        <LoginImage>
+          <img src={Pablo} alt="pablo-sign-in" />
+        </LoginImage>
+      </LoginLeft>
+      <LoginRight>
+        <WelcomeContainer>
+          <WelcomeText>Welcome!</WelcomeText>
+          <WelcomeDesc className="welcome-desc">
+            Enter details to login.
+          </WelcomeDesc>
+        </WelcomeContainer>
+        <FormContainer className="login-form">
           <form>
-            <div className="email">
-              <input
+            <EmailWrapper className="email">
+              <Input
                 type="email"
-                className="text-input"
-                placeholder="Email"
+                bg="#ffffff"
+                placeHolder="Email"
+                width="447px"
                 required
               />
-            </div>
-            <div className="password">
-              <input
+            </EmailWrapper>
+            <PasswordWrapper className="password">
+              <Input
                 type={showPassword ? "text" : "password"}
-                className="text-input"
-                placeholder="Password"
+                // className="text-input"
+                placeHolder="Password"
+                bg="#ffffff"
+                width="447px"
                 required
               />
-              <span className="show" onClick={togglePassword}>
+              <TogglePassword className="show" onClick={togglePassword}>
                 {showPassword ? "hide" : "show"}
-              </span>
-            </div>
-            <div className="fpassword">
+              </TogglePassword>
+            </PasswordWrapper>
+            <ForgotPassword className="fpassword">
               <p>Forgot PASSWORD?</p>
-            </div>
+            </ForgotPassword>
             <Link to="/dashboard">
-              <button type="submit" className="login-btn">
-                Log in
-              </button>
+              <Button
+                type="submit"
+                bg="#39cdcc"
+                color="#ffffff"
+                title="Log in"
+                maxWidth="447px"
+              />
             </Link>
           </form>
-        </div>
-      </div>
-    </div>
+        </FormContainer>
+      </LoginRight>
+    </LoginWrapper>
   );
 };
 
