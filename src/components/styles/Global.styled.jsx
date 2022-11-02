@@ -8,18 +8,22 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: ${({ theme }) => theme.colors.body};
-    /* color: hsl(192, 100%, 9%); */
+    /* background: ${({ theme }) => theme.colors.body}; */
     font-family: 'Poppins', sans-serif;
-    /* font-size: 1.15em; */
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   ul{
     list-style: none;
   }
+  @media (max-width: 920px) {
+    body {
+       /* overflow: auto; */
+    }
+  }
 
-  /* img {
-    max-width: 100%;
-  } */
+  img {
+    width: 100%;
+    height: auto;
+  }
 `;
 export default GlobalStyles;

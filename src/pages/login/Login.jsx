@@ -1,63 +1,78 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Pablo from "../../assets/images/pablo-sign-in 1.png";
 import Logo from "../../components/logo/Logo";
-import "./Login.scss";
+import Pablo from "../../assets/images/pablo-sign-in 1.png";
+import Button from "../../components/Button/Button";
+import Input from "../../components/Input/Input";
+import {
+  LoginContainer,
+  LoginLeft,
+  LoginRight,
+  WelcomeContainer,
+  WelcomeText,
+  WelcomeDesc,
+  FormContainer,
+  PasswordWrapper,
+  ForgotPassword,
+  // TogglePassword,
+} from "./Login.styled";
 
-const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const togglePassword = () => {
-    setShowPassword(showPassword ? false : true);
+const Login2 = () => {
+  const handleSunmit = (e) => {
+    e.preventDefault();
   };
 
   return (
-    <div className="login-wrapper">
-      <div className="login-left">
-        <Logo />
-        <div className="image">
-          <img src={Pablo} alt="pablo-sign-in" className="img-desc" />
+    <LoginContainer>
+      <LoginLeft>
+        <div style={{ marginTop: "4rem" }}>
+          <Logo />
         </div>
-      </div>
-      <div className="login-right">
-        <div className="welcome-container">
-          <h2 className="welcome-text">Welcome!</h2>
-          <p className="welcome-desc">Enter details to login.</p>
+        <div>
+          <img src={Pablo} alt="pablo pic" />
         </div>
-        <div className="login-form">
-          <form>
-            <div className="email">
-              <input
-                type="email"
-                className="text-input"
-                placeholder="Email"
+      </LoginLeft>
+      <LoginRight>
+        <WelcomeContainer>
+          <WelcomeText>Welcome!</WelcomeText>
+          <WelcomeDesc>Enter details to login.</WelcomeDesc>
+        </WelcomeContainer>
+        <FormContainer>
+          <form onSubmit={handleSunmit}>
+            <Input
+              type="email"
+              bg="#ffffff"
+              placeHolder="Email"
+              maxWidth="447px"
+              required
+            />
+            <PasswordWrapper>
+              <Input
+                type="password"
+                placeHolder="Password"
+                bg="#ffffff"
+                maxWidth="447px"
                 required
+                endIcon={true}
               />
-            </div>
-            <div className="password">
-              <input
-                type={showPassword ? "text" : "password"}
-                className="text-input"
-                placeholder="Password"
-                required
-              />
-              <span className="show" onClick={togglePassword}>
-                {showPassword ? "hide" : "show"}
-              </span>
-            </div>
-            <div className="fpassword">
+            </PasswordWrapper>
+            <ForgotPassword>
               <p>Forgot PASSWORD?</p>
-            </div>
+            </ForgotPassword>
             <Link to="/dashboard">
-              <button type="submit" className="login-btn">
-                Log in
-              </button>
+              <Button
+                type="submit"
+                bg="#39cdcc"
+                color="#ffffff"
+                title="Log in"
+                maxWidth="447px"
+              />
             </Link>
           </form>
-        </div>
-      </div>
-    </div>
+        </FormContainer>
+      </LoginRight>
+    </LoginContainer>
   );
 };
 
-export default Login;
+export default Login2;

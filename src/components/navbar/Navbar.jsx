@@ -5,18 +5,17 @@ import { BsSearch } from "react-icons/bs";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { BiCaretDown } from "react-icons/bi";
 import "./Navbar.scss";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   return (
     <div className="navbar-wrapper">
-       <div className="small-brand">
-          <img src={Brand} alt="brand" />
-        </div>
       <div className="brand-container">
         <div className="big-brand">
-          <img src={Brand} alt="lendsqr-brand" className="logo" />
-          <span className="logo-text">lendsqr</span>
+         <Link to="/login">
+         <img src={Brand} alt="lendsqr-brand" className="logo" />
+          <span className="logo-text">lendsqr</span></Link>
         </div>
         <div className="search-bar" style={{display: open? "flex": "none"}}>
           <input
