@@ -1,73 +1,62 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../../components/logo/Logo";
 import Pablo from "../../assets/images/pablo-sign-in 1.png";
-import Logo from "../../components/Logo/Logo";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 import {
-  LoginWrapper,
+  LoginContainer,
   LoginLeft,
-  LoginImage,
   LoginRight,
   WelcomeContainer,
   WelcomeText,
   WelcomeDesc,
   FormContainer,
-  EmailWrapper,
   PasswordWrapper,
   ForgotPassword,
-  TogglePassword,
-  // Input,
-  // Button
+  // TogglePassword,
 } from "./Login.styled";
 
-const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const togglePassword = () => {
-    setShowPassword(showPassword ? false : true);
+const Login2 = () => {
+  const handleSunmit = (e) => {
+    e.preventDefault();
   };
 
   return (
-    <LoginWrapper>
+    <LoginContainer>
       <LoginLeft>
-        <Logo />
-        <LoginImage>
-          <img src={Pablo} alt="pablo-sign-in" />
-        </LoginImage>
+        <div style={{ marginTop: "4rem" }}>
+          <Logo />
+        </div>
+        <div>
+          <img src={Pablo} alt="pablo pic" />
+        </div>
       </LoginLeft>
       <LoginRight>
         <WelcomeContainer>
           <WelcomeText>Welcome!</WelcomeText>
-          <WelcomeDesc className="welcome-desc">
-            Enter details to login.
-          </WelcomeDesc>
+          <WelcomeDesc>Enter details to login.</WelcomeDesc>
         </WelcomeContainer>
-        <FormContainer className="login-form">
-          <form>
-            <EmailWrapper className="email">
+        <FormContainer>
+          <form onSubmit={handleSunmit}>
+            <Input
+              type="email"
+              bg="#ffffff"
+              placeHolder="Email"
+              maxWidth="447px"
+              required
+            />
+            <PasswordWrapper>
               <Input
-                type="email"
-                bg="#ffffff"
-                placeHolder="Email"
-                width="447px"
-                required
-              />
-            </EmailWrapper>
-            <PasswordWrapper className="password">
-              <Input
-                type={showPassword ? "text" : "password"}
-                // className="text-input"
+                type="password"
                 placeHolder="Password"
                 bg="#ffffff"
-                width="447px"
+                maxWidth="447px"
                 required
+                endIcon={true}
               />
-              <TogglePassword className="show" onClick={togglePassword}>
-                {showPassword ? "hide" : "show"}
-              </TogglePassword>
             </PasswordWrapper>
-            <ForgotPassword className="fpassword">
+            <ForgotPassword>
               <p>Forgot PASSWORD?</p>
             </ForgotPassword>
             <Link to="/dashboard">
@@ -82,8 +71,8 @@ const Login = () => {
           </form>
         </FormContainer>
       </LoginRight>
-    </LoginWrapper>
+    </LoginContainer>
   );
 };
 
-export default Login;
+export default Login2;

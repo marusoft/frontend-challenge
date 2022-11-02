@@ -1,4 +1,3 @@
-@import "../../Variables/Variables.scss";
 
 .navbar-wrapper {
   display: flex;
@@ -11,7 +10,6 @@
 }
 
 .brand-container {
-  // @include logoStyle(0rem);
   display: flex;
   align-items: center;
   gap: 6rem;
@@ -22,7 +20,7 @@
 }
 .logo-text {
   margin-left: 0.6rem;
-  color: $logoTextColor;
+  color: #213f7d;;
   font-size: 2.2rem;
 }
 .search-input {

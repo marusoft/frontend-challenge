@@ -1,47 +1,36 @@
 import styled from "styled-components";
 
-export const LoginWrapper = styled.div`
+export const LoginContainer = styled.div`
   display: flex;
-  /* flex-direction: row; */
+  @media only screen and (max-width: 920px) {
+    flex-direction: column;
+  }
 `;
 export const LoginLeft = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  height: 90vh;
   padding: 0 80px;
-  @media only screen and (min-width: 1200px) {
-    /* flex: 2; */
-  }
+  height: 100vh;
+  flex: 50%;
+  background: ${({ theme }) => theme.colors.body};
   @media only screen and (max-width: 920px) {
     display: none;
   }
 `;
-export const LoginImage = styled.div``;
 export const LoginRight = styled.div`
-  flex: 1;
-  width: 100%;
+  flex: 50%;
+  padding: 0 70px;
+  background: ${({ theme }) => theme.colors.loginBg};
   background: ${({ theme }) => theme.colors.loginBg};
   box-shadow: 0px 15px 90px ${({ theme }) => theme.colors.boxShadowColor};
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 80px;
   font-family: "Poppins";
-  @media only screen and (min-width: 1200px) {
-    flex: 6;
-    height: 110vh;
-  }
-  @media only screen and (max-width: 1200px) {
-    height: 140vh;
-  }
-  @media only screen and (max-width: 1024px) {
-    height: 140vh;
-  }
   @media only screen and (max-width: 920px) {
-    justify-content: start;
+    /* justify-content: start; */
+  }
+  @media only screen and (max-width: 480px) {
+    padding: 0 15px;
   }
 `;
 export const WelcomeContainer = styled.div`
@@ -67,48 +56,20 @@ export const WelcomeDesc = styled.p`
   color: #545f7d;
   margin-top: 0.5rem;
   @media only screen and (max-width: 300px) {
-    width: 110px;
     font-size: 18px;
   }
 `;
 export const FormContainer = styled.div`
   font-family: "Poppins";
+  form{
+    width: 100%;
+  }
   @media only screen and (max-width: 920px) {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 `;
-export const EmailWrapper = styled.div``;
-// export const Input = styled.input`
-//   width: 447px;
-//   height: 50px;
-//   background: ${({ theme }) => theme.colors.loginBg};
-//   border: 2px solid ${({ theme }) => theme.colors.borderColor};
-//   border-radius: ${({ theme }) => theme.colors.borderRadius};
-//   margin-bottom: 1rem;
-//   padding: 1rem;
-//   font-family: "Poppins";
-//   font-weight: 400;
-//   font-size: 15px;
-//   color: ${({ theme }) => theme.colors.inputTextColor};
-//   opacity: 0.6;
-//   &:focus {
-//     outline: none;
-//   }
-//   @media only screen and (max-width: 768px) {
-//     width: 400px;
-//   }
-//   @media only screen and (max-width: 540px) {
-//     width: 350px;
-//   }
-//   @media only screen and (max-width: 480px) {
-//     width: 330px;
-//   }
-//   @media only screen and (max-width: 300px) {
-//     width: 250px;
-//   }
-// `;
 export const PasswordWrapper = styled.div`
   display: inline;
   position: relative;
@@ -136,27 +97,3 @@ export const ForgotPassword = styled.div`
     text-align: center;
   }
 `;
-// export const Button = styled.button`
-//   width: 447px;
-//   height: 50px;
-//   font-weight: 600;
-//   font-size: 16px;
-//   text-transform: uppercase;
-//   background: ${({ theme }) => theme.colors.buttonBgColor};
-//   border-radius: 8px;
-//   color: ${({ theme }) => theme.colors.loginBg};
-//   border: none;
-//   cursor: pointer;
-//   @media only screen and (max-width: 768px) {
-//     width: 400px;
-//   }
-//   @media only screen and (max-width: 540px) {
-//     width: 350px;
-//   }
-//   @media only screen and (max-width: 480px) {
-//     width: 330px;
-//   }
-//   @media only screen and (max-width: 300px) {
-//     width: 250px;
-//   }
-// `;

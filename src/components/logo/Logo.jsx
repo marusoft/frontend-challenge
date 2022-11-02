@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <LogoWrapper>
       <LogoImage src={Brand} alt="lendsqr-brand" />
-      <LogoText>lendsqr</LogoText>
+      <LogoText>Marusoft</LogoText>
     </LogoWrapper>
   );
 };

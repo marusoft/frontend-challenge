@@ -1,10 +1,9 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Login from "./pages/login/Login";
+import Login from "./pages/login/Login";
 import Dashboard from "./pages/dashboard/dashboard";
 import GlobalStyles from "./components/styles/Global.styled";
-import Login2 from "./pages/login/Login2";
 
 const theme = {
   colors: {
@@ -33,8 +32,8 @@ const App = () => {
         <GlobalStyles />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Login2 />} />
-            <Route path="/login2" element={<Login2 />} />
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </BrowserRouter>
