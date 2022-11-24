@@ -17,7 +17,7 @@ import {
   // TogglePassword,
 } from "./Login.styled";
 
-const Login2 = () => {
+const Login = () => {
   const handleSunmit = (e) => {
     e.preventDefault();
   };
@@ -75,4 +75,4 @@ const Login2 = () => {
   );
 };
 
-export default Login2;
+export default Login;
