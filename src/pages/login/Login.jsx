@@ -62,7 +62,7 @@ const Login = () => {
             <Link to="/dashboard">
               <Button
                 type="submit"
-                bg="#39cdcc"
+                bg="#0e1212"
                 color="#ffffff"
                 title="Log in"
                 maxWidth="447px"

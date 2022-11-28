@@ -6,8 +6,9 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { BiCaretDown } from "react-icons/bi";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 
-const Navbar = () => {
+const Navbar = ({ maxWidth}) => {
   const [open, setOpen] = useState(false);
   return (
     <div className="navbar-wrapper">
@@ -17,16 +18,16 @@ const Navbar = () => {
          <img src={Brand} alt="lendsqr-brand" className="logo" />
           <span className="logo-text">lendsqr</span></Link>
         </div>
-        <div className="search-bar" style={{display: open? "flex": "none"}}>
+        <form className="search-bar" style={{display: open? "flex": "none"}}>
           <input
             type="text"
             placeholder="Search for anything"
             className="search-input"
           />
-          <button>
+          <Button maxWidth={maxWidth}>
             <BsSearch className="search-icon" />
-          </button>
-        </div>
+          </Button>
+        </form>
       </div>
       <div className="profiles">
       <BsSearch className="search-button" onClick={() => setOpen(true)} />

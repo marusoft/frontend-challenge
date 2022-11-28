@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ButtonWrapper = styled.div`
   width: 100%;
   button {
-    background-color: ${({ bg }) => (bg ? bg : "#39cdcc")};
+    background-color: ${({ bg }) => bg || ""};
     color: ${({ color }) => (color ? color : "#ffffff")};
     max-width: ${(maxWidth) => (maxWidth ? maxWidth : "447px")};
     width: 100%;
