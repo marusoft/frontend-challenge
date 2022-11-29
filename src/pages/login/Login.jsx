@@ -39,18 +39,12 @@ const Login = () => {
         </WelcomeContainer>
         <FormContainer>
           <form onSubmit={handleSunmit}>
-            <Input
-              type="email"
-              bg="#ffffff"
-              placeHolder="Email"
-              maxWidth="447px"
-              required
-            />
+            <Input type="email" placeholder="Email" maxWidth="447px" required />
+            <Input type="email" placeholder="Test" maxWidth={"100px"} required />
             <PasswordWrapper>
               <Input
                 type="password"
-                placeHolder="Password"
-                bg="#ffffff"
+                placeholder="Password"
                 maxWidth="447px"
                 required
                 endIcon={true}
@@ -60,13 +54,7 @@ const Login = () => {
               <p>Forgot PASSWORD?</p>
             </ForgotPassword>
             <Link to="/dashboard">
-              <Button
-                type="submit"
-                bg="#0e1212"
-                color="#ffffff"
-                title="Log in"
-                maxWidth="447px"
-              />
+              <Button bg="#39cdcc" color="#ffffff" title="Log in" maxWidth={"700px"} />
             </Link>
           </form>
         </FormContainer>

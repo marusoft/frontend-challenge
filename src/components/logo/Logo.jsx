@@ -2,9 +2,9 @@ import React from "react";
 import Brand from "../../assets/brand/website_logo.png";
 import { LogoWrapper, LogoImage } from "./logo.styled";
 
-const Logo = () => {
+const Logo = ({pb}) => {
   return (
-    <LogoWrapper>
+    <LogoWrapper pb={pb}>
       <LogoImage src={Brand} alt="lendsqr-brand" />
       {/* <LogoText>Marusoft</LogoText> */}
     </LogoWrapper>

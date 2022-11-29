@@ -3,20 +3,21 @@ import styled from "styled-components";
 
 const InputWrapper = styled.div`
   position: relative;
+  max-width: ${({ maxWidth }) => maxWidth};
   width: 100%;
   input {
-    max-width: ${(maxWidth) => (maxWidth ? maxWidth : "447px")};
     width: 100%;
+    color: ${({ theme }) => theme.colors.inputTextColor};
+    border: 2px solid ${({ theme }) => theme.colors.borderColor};
+    /* border: 1px solid #213F7D; */
+    border-radius: ${({ theme }) => theme.colors.borderRadius};
+    /* max-width: ${(maxWidth) => (maxWidth ? maxWidth : "447px")}; */
     height: 50px;
     margin-bottom: 1rem;
     padding: 1rem;
     font-family: "Poppins";
     font-weight: 400;
     font-size: 15px;
-    color: ${({ theme }) => theme.colors.inputTextColor};
-    background: ${({ bg }) => (bg ? bg : "#ffffff")};
-    border: 2px solid ${({ theme }) => theme.colors.borderColor};
-    border-radius: ${({ theme }) => theme.colors.borderRadius};
     opacity: 0.6;
     &:focus {
       outline: none;
@@ -39,10 +40,10 @@ export const TogglePassword = styled.span`
 `;
 
 const Input = ({
-  bg,
-  name,
   maxWidth,
-  placeHolder,
+  placeholder, 
+  name,
+  onChange,
   type,
   endIcon,
   ...props
@@ -59,9 +60,10 @@ const Input = ({
         <>
           <input
             type={showPassword ? "text" : "password"}
-            bg={bg}
-            placeholder={placeHolder}
+            placeholder={placeholder}
             maxWidth={maxWidth}
+            name={name}
+            onChange={onChange}
             {...props}
           />
           <TogglePassword className="show" onClick={togglePassword}>
@@ -71,9 +73,10 @@ const Input = ({
       ) : (
         <input
           type={type}
-          bg={bg}
-          placeholder={placeHolder}
+          placeholder={placeholder}
           maxWidth={maxWidth}
+          name={name}
+          onChange={onChange}
           {...props}
         />
       )}

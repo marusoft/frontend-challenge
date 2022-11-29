@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const LogoWrapper = styled.div`
-  padding-bottom: 8rem;
+  /* padding-bottom: 8rem; */
+  padding-bottom: ${({ pb }) => (pb ? pb : "8rem")};
 `;
 export const LogoImage = styled.img`
   /* width: 24.75px;

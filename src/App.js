@@ -11,7 +11,7 @@ const theme = {
     loginBg: "#ffffff;",
     boxShadowColor: "rgba(0, 0, 0, 0.03)",
     borderColor: "rgba(84, 95, 125, 0.15)",
-    borderRadius: "5px",
+    borderRadius: "8px",
     inputTextColor: "#545f7d",
     loginColor: "#39cdcc",
     buttonBgColor: "#39cdcc"

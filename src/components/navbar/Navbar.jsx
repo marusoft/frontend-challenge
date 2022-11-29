@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Brand from "../../assets/brand/Union.png";
+// import Brand from "../../assets/brand/Union.png";
 import User from "../../assets/images/user.png";
 import { BsSearch } from "react-icons/bs";
 import { IoIosNotificationsOutline } from "react-icons/io";
@@ -7,30 +7,40 @@ import { BiCaretDown } from "react-icons/bi";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
+import Input from "../Input/Input";
+import Logo from "../logo/Logo";
 
-const Navbar = ({ maxWidth}) => {
+const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="navbar-wrapper">
       <div className="brand-container">
         <div className="big-brand">
-         <Link to="/login">
-         <img src={Brand} alt="lendsqr-brand" className="logo" />
-          <span className="logo-text">lendsqr</span></Link>
+          <Link to="/login">
+            {/* <img src={Brand} alt="lendsqr-brand" className="logo" /> */}
+            {/* <span className="logo-text">marusoft</span> */}
+            <Logo pb={"0rem"} />
+          </Link>
         </div>
-        <form className="search-bar" style={{display: open? "flex": "none"}}>
-          <input
+      </div>
+      {/* <form
+          className="search-bar"
+          style={{ display: open ? "flex" : "none" }}
+        >
+          <Input
             type="text"
             placeholder="Search for anything"
             className="search-input"
+            maxWidth="400px"
           />
-          <Button maxWidth={maxWidth}>
-            <BsSearch className="search-icon" />
-          </Button>
-        </form>
+          <Button maxWidth={"500px"} bg={"red"} icon={<BsSearch />} />
+        </form> */}
+          <div style={{ width: "100%", maxWidth: "450px", display: open ? "flex" : "none" }}>
+        <Input type="text" placeholder="Search for anything" bord />
+        <Button maxWidth={"56px"} bg="#39cdcc" border={"8px"} icon={<BsSearch />} />
       </div>
       <div className="profiles">
-      <BsSearch className="search-button" onClick={() => setOpen(true)} />
+        <BsSearch className="search-button" onClick={() => setOpen(true)} />
         <p className="doc">Doc</p>
         <div className="notification">
           <IoIosNotificationsOutline />
@@ -43,6 +53,10 @@ const Navbar = ({ maxWidth}) => {
           </span>
         </div>
       </div>
+      {/* <div style={{ width: "100%", maxWidth: "450px", display: "flex" }}>
+        <Input type="text" placeholder={"hello"} />
+        <Button maxWidth={"150px"} bg="red" icon={<BsSearch />} />
+      </div> */}
     </div>
   );
 };

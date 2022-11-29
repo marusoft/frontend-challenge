@@ -63,6 +63,7 @@ export const FormContainer = styled.div`
   font-family: "Poppins";
   form{
     width: 100%;
+    /* max-width: 550px; */
   }
   @media only screen and (max-width: 920px) {
     display: flex;
