@@ -9,7 +9,7 @@ const theme = {
   colors: {
     body: "#e5e5e5",
     loginBg: "#ffffff;",
-    boxShadowColor: "#efeefe",
+    boxShadowColor: "#ffffff",
     borderColor: "#c8cddc",
     borderRadius: "8px",
     inputTextColor: "#545f7d",

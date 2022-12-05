@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle`
   }
   @media (max-width: 920px) {
     body {
-       /* overflow: auto; */
+     
     }
   }
 
