@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import Brand from "../../assets/brand/Union.png";
 import User from "../../assets/images/user.png";
 import { BsSearch } from "react-icons/bs";
 import { IoIosNotificationsOutline } from "react-icons/io";
@@ -19,7 +18,7 @@ const Navbar = () => {
           <Link to="/login">
             {/* <img src={Brand} alt="lendsqr-brand" className="logo" /> */}
             {/* <span className="logo-text">marusoft</span> */}
-            <Logo pb={"0rem"} />
+            <Logo />
           </Link>
         </div>
       </div>
@@ -35,9 +34,19 @@ const Navbar = () => {
           />
           <Button maxWidth={"500px"} bg={"red"} icon={<BsSearch />} />
         </form> */}
-          <div style={{ width: "100%", maxWidth: "450px", display: open ? "flex" : "none" }}>
-        <Input type="text" placeholder="Search for anything" bord />
-        <Button maxWidth={"56px"} bg="#39cdcc" border={"8px"} icon={<BsSearch />} />
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "450px",
+          display: open ? "flex" : "none",
+        }}
+      >
+        <Input type="text" placeholder="Search for anything" />
+        <Button
+          border="8px"
+          icon={<BsSearch />}
+          fullWidth="56px"
+        />
       </div>
       <div className="profiles">
         <BsSearch className="search-button" onClick={() => setOpen(true)} />

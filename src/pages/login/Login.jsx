@@ -26,7 +26,7 @@ const Login = () => {
     <LoginContainer>
       <LoginLeft>
         <div style={{ marginTop: "4rem" }}>
-          <Logo />
+          <Logo pb="9rem" />
         </div>
         <div>
           <img src={Pablo} alt="pablo pic" />
@@ -39,22 +39,22 @@ const Login = () => {
         </WelcomeContainer>
         <FormContainer>
           <form onSubmit={handleSunmit}>
-            <Input type="email" placeholder="Email" maxWidth="447px" required />
-            <Input type="email" placeholder="Test" maxWidth={"100px"} required />
+            <Input type="email" placeholder="Email" required />
             <PasswordWrapper>
               <Input
                 type="password"
                 placeholder="Password"
-                maxWidth="447px"
                 required
-                endIcon={true}
+                endIcon
               />
             </PasswordWrapper>
             <ForgotPassword>
               <p>Forgot PASSWORD?</p>
             </ForgotPassword>
             <Link to="/dashboard">
-              <Button bg="#39cdcc" color="#ffffff" title="Log in" maxWidth={"700px"} />
+              <Button
+                title="Log in"
+              />
             </Link>
           </form>
         </FormContainer>

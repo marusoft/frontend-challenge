@@ -1,30 +1,23 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const InputWrapper = styled.div`
-  position: relative;
-  max-width: ${({ maxWidth }) => maxWidth};
-  width: 100%;
-  input {
-    width: 100%;
-    color: ${({ theme }) => theme.colors.inputTextColor};
-    border: 2px solid ${({ theme }) => theme.colors.borderColor};
-    /* border: 1px solid #213F7D; */
-    border-radius: ${({ theme }) => theme.colors.borderRadius};
-    /* max-width: ${(maxWidth) => (maxWidth ? maxWidth : "447px")}; */
-    height: 50px;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    font-family: "Poppins";
-    font-weight: 400;
-    font-size: 15px;
-    opacity: 0.6;
-    &:focus {
-      outline: none;
-    }
-    &::placeholder {
-      color: inherit;
-    }
+const Input = styled.input`
+  width: ${({ fullWidth }) => (fullWidth ? fullWidth : "100%")};
+  color: ${({ theme }) => theme.colors.inputTextColor};
+  border: 2px solid ${({ theme }) => theme.colors.borderColor};
+  border-radius: ${({ theme }) => theme.colors.borderRadius};
+  height: 50px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 15px;
+  opacity: 0.6;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: inherit;
   }
 `;
 export const TogglePassword = styled.span`
@@ -39,9 +32,9 @@ export const TogglePassword = styled.span`
   cursor: pointer;
 `;
 
-const Input = ({
-  maxWidth,
-  placeholder, 
+const TextInput = ({
+  fullWidth,
+  placeholder,
   name,
   onChange,
   type,
@@ -55,13 +48,13 @@ const Input = ({
   };
 
   return (
-    <InputWrapper>
+    <>
       {endIcon ? (
         <>
-          <input
+          <Input
             type={showPassword ? "text" : "password"}
             placeholder={placeholder}
-            maxWidth={maxWidth}
+            fullWidth={fullWidth}
             name={name}
             onChange={onChange}
             {...props}
@@ -71,17 +64,17 @@ const Input = ({
           </TogglePassword>
         </>
       ) : (
-        <input
+        <Input
           type={type}
           placeholder={placeholder}
-          maxWidth={maxWidth}
+          fullWidth={fullWidth}
           name={name}
           onChange={onChange}
           {...props}
         />
       )}
-    </InputWrapper>
+    </>
   );
 };
 
-export default Input;
+export default TextInput;

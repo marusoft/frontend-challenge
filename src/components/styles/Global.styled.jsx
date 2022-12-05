@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     /* background: ${({ theme }) => theme.colors.body}; */
     font-family: 'Poppins', sans-serif;
+    font: inherit;
     /* overflow: hidden; */
   }
   ul{

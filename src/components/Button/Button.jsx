@@ -2,11 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const ButtonWrapper = styled.button`
-  width: 100%;
+  width: ${({ fullWidth }) => (fullWidth ? fullWidth : "100%")};
   background-color: ${({ bg }) => (bg ? bg : "#39cdcc")};
   color: ${({ color }) => (color ? color : "#ffffff")};
   border: ${({ border }) => (border ? border : "0px")};
-  max-width: ${(maxWidth) => (maxWidth ? maxWidth : "447px")};
   border-radius: 8px;
   height: 50px;
   font-weight: 600;
@@ -20,7 +19,7 @@ const Button = ({
   bg,
   border,
   color,
-  maxWidth,
+  fullWidth,
   title,
   type,
   loading,
@@ -34,7 +33,7 @@ const Button = ({
       bg={bg}
       border={border}
       color={color}
-      maxWidth={maxWidth}
+      fullWidth={fullWidth}
       loading={loading}
       title={title}
       {...props}
