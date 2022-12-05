@@ -6,7 +6,6 @@ const Logo = ({pb}) => {
   return (
     <LogoWrapper pb={pb}>
       <LogoImage src={Brand} alt="lendsqr-brand" />
-      {/* <LogoText>Marusoft</LogoText> */}
     </LogoWrapper>
   );
 };

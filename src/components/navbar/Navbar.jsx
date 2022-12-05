@@ -3,52 +3,34 @@ import User from "../../assets/images/user.png";
 import { BsSearch } from "react-icons/bs";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { BiCaretDown } from "react-icons/bi";
-import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import Logo from "../logo/Logo";
+import { NavbarWrapper, BrandContainer, Profiles } from "./navbar.styled";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="navbar-wrapper">
-      <div className="brand-container">
+    <NavbarWrapper>
+      <BrandContainer>
         <div className="big-brand">
           <Link to="/login">
-            {/* <img src={Brand} alt="lendsqr-brand" className="logo" /> */}
-            {/* <span className="logo-text">marusoft</span> */}
             <Logo />
           </Link>
         </div>
-      </div>
-      {/* <form
-          className="search-bar"
-          style={{ display: open ? "flex" : "none" }}
-        >
-          <Input
-            type="text"
-            placeholder="Search for anything"
-            className="search-input"
-            maxWidth="400px"
-          />
-          <Button maxWidth={"500px"} bg={"red"} icon={<BsSearch />} />
-        </form> */}
-      <div
+      </BrandContainer>
+      <form
         style={{
           width: "100%",
           maxWidth: "450px",
           display: open ? "flex" : "none",
         }}
       >
-        <Input type="text" placeholder="Search for anything" />
-        <Button
-          border="8px"
-          icon={<BsSearch />}
-          fullWidth="56px"
-        />
-      </div>
-      <div className="profiles">
+        <Input type="search" placeholder="Search for anything" />
+        <Button border="8px" icon={<BsSearch />} fullWidth="56px" />
+      </form>
+      <Profiles>
         <BsSearch className="search-button" onClick={() => setOpen(true)} />
         <p className="doc">Doc</p>
         <div className="notification">
@@ -61,12 +43,8 @@ const Navbar = () => {
             <BiCaretDown className="user-info" />
           </span>
         </div>
-      </div>
-      {/* <div style={{ width: "100%", maxWidth: "450px", display: "flex" }}>
-        <Input type="text" placeholder={"hello"} />
-        <Button maxWidth={"150px"} bg="red" icon={<BsSearch />} />
-      </div> */}
-    </div>
+      </Profiles>
+    </NavbarWrapper>
   );
 };
 
