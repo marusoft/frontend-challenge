@@ -5,7 +5,7 @@ import { LogoWrapper, LogoImage } from "./logo.styled";
 const Logo = ({ pb }) => {
   return (
     <LogoWrapper pb={pb}>
-      <LogoImage src={Brand} alt="lendsqr-brand" />
+      <LogoImage src={Brand} alt="marusoft-brand" />
     </LogoWrapper>
   );
 };

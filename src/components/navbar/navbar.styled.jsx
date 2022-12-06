@@ -31,10 +31,32 @@ export const BrandContainer = styled.div`
     }
   }
 `;
+
+export const SearchBar = styled.div`
+  width: 100%;
+  max-width: 450px;
+  margin-top: 1rem;
+  .cancel-btn {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    color: #39cdcc;
+    @media (min-width: 540px) {
+      display: none;
+    }
+  }
+  @media (max-width: 540px) {
+    display: ${({ open }) => (open ? "flex" : "none")};
+  }
+  @media (min-width: 540px) {
+    display: flex;
+  }
+`;
+
 export const Profiles = styled.div`
-  display: flex;
   align-items: center;
   gap: 2rem;
+  display: ${({ open }) => (open ? "none" : "flex")};
   .search-button {
     cursor: pointer;
     width: 23px;
@@ -74,5 +96,15 @@ export const Profiles = styled.div`
   }
   .user-info {
     margin-left: 0.4rem;
+  }
+  @media (max-width: 540px) {
+    .search-button {
+      display: block;
+    }
+  }
+  @media (min-width: 540px) {
+    .search-button {
+      display: none;
+    }
   }
 `;

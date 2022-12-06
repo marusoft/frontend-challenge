@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import User from "../../assets/images/user.png";
-import { BsSearch } from "react-icons/bs";
+import { BsSearch, BsCircle } from "react-icons/bs";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { BiCaretDown } from "react-icons/bi";
+import { MdOutlineCancel } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import Logo from "../logo/Logo";
-import { NavbarWrapper, BrandContainer, Profiles } from "./navbar.styled";
+import SmallLogo from "../logo/SmallLogo";
+import {
+  NavbarWrapper,
+  BrandContainer,
+  SearchBar,
+  Profiles,
+} from "./navbar.styled";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -19,18 +26,25 @@ const Navbar = () => {
             <Logo />
           </Link>
         </div>
+        <div className="small-brand">
+          <Link to="/login">
+            <SmallLogo />
+          </Link>
+        </div>
       </BrandContainer>
-      <form
-        style={{
-          width: "100%",
-          maxWidth: "450px",
-          display: open ? "flex" : "none",
-        }}
-      >
+      <SearchBar open={open}>
         <Input type="search" placeholder="Search for anything" />
-        <Button border="8px" icon={<BsSearch />} fullWidth="56px" />
-      </form>
-      <Profiles>
+        <Button
+          border="8px"
+          icon={<BsSearch className="search-button" />}
+          fullWidth="56px"
+        />
+        <MdOutlineCancel
+          className="cancel-btn"
+          onClick={() => setOpen(false)}
+        />
+      </SearchBar>
+      <Profiles open={open}>
         <BsSearch className="search-button" onClick={() => setOpen(true)} />
         <p className="doc">Doc</p>
         <div className="notification">

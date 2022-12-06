@@ -41,20 +41,13 @@ const Login = () => {
           <form onSubmit={handleSunmit}>
             <Input type="email" placeholder="Email" required />
             <PasswordWrapper>
-              <Input
-                type="password"
-                placeholder="Password"
-                required
-                endIcon
-              />
+              <Input type="password" placeholder="Password" required endIcon />
             </PasswordWrapper>
             <ForgotPassword>
               <p>Forgot PASSWORD?</p>
             </ForgotPassword>
             <Link to="/dashboard">
-              <Button
-                title="Log in"
-              />
+              <Button title="Log in" />
             </Link>
           </form>
         </FormContainer>
