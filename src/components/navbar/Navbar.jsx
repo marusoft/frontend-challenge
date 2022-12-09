@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import User from "../../assets/images/user.png";
-import { BsSearch, BsCircle } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { BiCaretDown } from "react-icons/bi";
 import { MdOutlineCancel } from "react-icons/md";

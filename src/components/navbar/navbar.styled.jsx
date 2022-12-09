@@ -8,13 +8,16 @@ export const NavbarWrapper = styled.div`
   height: 100px;
   background: #ffffff;
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  /* z-index: 1000; */
 `;
 
 export const BrandContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 6rem;
-  @media (max-width: 540px) {
+  @media (max-width: 768px) {
     .small-brand {
       display: block;
     }
@@ -22,7 +25,7 @@ export const BrandContainer = styled.div`
       display: none;
     }
   }
-  @media (min-width: 540px) {
+  @media (min-width: 768px) {
     .small-brand {
       display: none;
     }
@@ -55,7 +58,7 @@ export const SearchBar = styled.div`
 
 export const Profiles = styled.div`
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   display: ${({ open }) => (open ? "none" : "flex")};
   .search-button {
     cursor: pointer;
