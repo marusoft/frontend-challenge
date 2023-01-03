@@ -5,4 +5,5 @@ export const LogoWrapper = styled.div`
 `;
 export const LogoImage = styled.img`
   max-width: 140px;
+  cursor: pointer;
 `;

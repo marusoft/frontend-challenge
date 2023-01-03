@@ -11,12 +11,17 @@ export const NavbarWrapper = styled.div`
   position: sticky;
   top: 0;
   /* z-index: 1000; */
+  .big-brand{
+    /* background-color: red; */
+    cursor: pointer;
+  }
 `;
 
 export const BrandContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 6rem;
+
   @media (max-width: 768px) {
     .small-brand {
       display: block;
