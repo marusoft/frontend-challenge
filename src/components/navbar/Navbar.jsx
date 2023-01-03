@@ -1,35 +1,51 @@
 import React, { useState } from "react";
-import Brand from "../../assets/brand/Union.png";
 import User from "../../assets/images/user.png";
 import { BsSearch } from "react-icons/bs";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { BiCaretDown } from "react-icons/bi";
-import "./Navbar.scss";
+import { MdOutlineCancel } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Button from "../Button/Button";
+import Input from "../Input/Input";
+import Logo from "../logo/Logo";
+import SmallLogo from "../logo/SmallLogo";
+import {
+  NavbarWrapper,
+  BrandContainer,
+  SearchBar,
+  Profiles,
+} from "./navbar.styled";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="navbar-wrapper">
-      <div className="brand-container">
+    <NavbarWrapper>
+      <BrandContainer>
         <div className="big-brand">
-         <Link to="/login">
-         <img src={Brand} alt="lendsqr-brand" className="logo" />
-          <span className="logo-text">lendsqr</span></Link>
+          <Link to="/login">
+            <Logo />
+          </Link>
         </div>
-        <div className="search-bar" style={{display: open? "flex": "none"}}>
-          <input
-            type="text"
-            placeholder="Search for anything"
-            className="search-input"
-          />
-          <button>
-            <BsSearch className="search-icon" />
-          </button>
+        <div className="small-brand">
+          <Link to="/login">
+            <SmallLogo />
+          </Link>
         </div>
-      </div>
-      <div className="profiles">
-      <BsSearch className="search-button" onClick={() => setOpen(true)} />
+      </BrandContainer>
+      <SearchBar open={open}>
+        <Input type="search" placeholder="Search for anything" />
+        <Button
+          border="8px"
+          icon={<BsSearch className="search-button" />}
+          fullWidth="56px"
+        />
+        <MdOutlineCancel
+          className="cancel-btn"
+          onClick={() => setOpen(false)}
+        />
+      </SearchBar>
+      <Profiles open={open}>
+        <BsSearch className="search-button" onClick={() => setOpen(true)} />
         <p className="doc">Doc</p>
         <div className="notification">
           <IoIosNotificationsOutline />
@@ -41,8 +57,8 @@ const Navbar = () => {
             <BiCaretDown className="user-info" />
           </span>
         </div>
-      </div>
-    </div>
+      </Profiles>
+    </NavbarWrapper>
   );
 };
 

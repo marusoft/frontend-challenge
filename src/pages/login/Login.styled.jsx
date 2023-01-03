@@ -19,15 +19,15 @@ export const LoginRight = styled.div`
   flex: 50%;
   padding: 0 70px;
   background: ${({ theme }) => theme.colors.loginBg};
-  background: ${({ theme }) => theme.colors.loginBg};
   box-shadow: 0px 15px 90px ${({ theme }) => theme.colors.boxShadowColor};
-  height: 100vh;
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: "Poppins";
   @media only screen and (max-width: 920px) {
     /* justify-content: start; */
+
   }
   @media only screen and (max-width: 480px) {
     padding: 0 15px;
@@ -63,6 +63,7 @@ export const FormContainer = styled.div`
   font-family: "Poppins";
   form{
     width: 100%;
+    /* max-width: 550px; */
   }
   @media only screen and (max-width: 920px) {
     display: flex;

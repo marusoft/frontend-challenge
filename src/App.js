@@ -9,9 +9,9 @@ const theme = {
   colors: {
     body: "#e5e5e5",
     loginBg: "#ffffff;",
-    boxShadowColor: "rgba(0, 0, 0, 0.03)",
-    borderColor: "rgba(84, 95, 125, 0.15)",
-    borderRadius: "5px",
+    boxShadowColor: "#ffffff",
+    borderColor: "#c8cddc",
+    borderRadius: "8px",
     inputTextColor: "#545f7d",
     loginColor: "#39cdcc",
     buttonBgColor: "#39cdcc"

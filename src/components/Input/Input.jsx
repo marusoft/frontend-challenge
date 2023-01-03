@@ -1,29 +1,23 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const InputWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  input {
-    max-width: ${(maxWidth) => (maxWidth ? maxWidth : "447px")};
-    width: 100%;
-    height: 50px;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    font-family: "Poppins";
-    font-weight: 400;
-    font-size: 15px;
-    color: ${({ theme }) => theme.colors.inputTextColor};
-    background: ${({ bg }) => (bg ? bg : "#ffffff")};
-    border: 2px solid ${({ theme }) => theme.colors.borderColor};
-    border-radius: ${({ theme }) => theme.colors.borderRadius};
-    opacity: 0.6;
-    &:focus {
-      outline: none;
-    }
-    &::placeholder {
-      color: inherit;
-    }
+const Input = styled.input`
+  width: ${({ fullWidth }) => (fullWidth ? fullWidth : "100%")};
+  color: ${({ theme }) => theme.colors.inputTextColor};
+  border: 2px solid ${({ theme }) => theme.colors.borderColor};
+  border-radius: ${({ theme }) => theme.colors.borderRadius};
+  height: 50px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 15px;
+  opacity: 0.6;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: inherit;
   }
 `;
 export const TogglePassword = styled.span`
@@ -38,11 +32,11 @@ export const TogglePassword = styled.span`
   cursor: pointer;
 `;
 
-const Input = ({
-  bg,
+const TextInput = ({
+  fullWidth,
+  placeholder,
   name,
-  maxWidth,
-  placeHolder,
+  onChange,
   type,
   endIcon,
   ...props
@@ -54,14 +48,15 @@ const Input = ({
   };
 
   return (
-    <InputWrapper>
+    <>
       {endIcon ? (
         <>
-          <input
+          <Input
             type={showPassword ? "text" : "password"}
-            bg={bg}
-            placeholder={placeHolder}
-            maxWidth={maxWidth}
+            placeholder={placeholder}
+            fullWidth={fullWidth}
+            name={name}
+            onChange={onChange}
             {...props}
           />
           <TogglePassword className="show" onClick={togglePassword}>
@@ -69,16 +64,17 @@ const Input = ({
           </TogglePassword>
         </>
       ) : (
-        <input
+        <Input
           type={type}
-          bg={bg}
-          placeholder={placeHolder}
-          maxWidth={maxWidth}
+          placeholder={placeholder}
+          fullWidth={fullWidth}
+          name={name}
+          onChange={onChange}
           {...props}
         />
       )}
-    </InputWrapper>
+    </>
   );
 };
 
-export default Input;
+export default TextInput;
